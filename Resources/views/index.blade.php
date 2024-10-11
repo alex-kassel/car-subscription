@@ -1,16 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>A New Domain</title>
-</head>
-<body>
-    <h1>A New Domain</h1>
-    <p>Lorem ipsum...</p>
-    <p>{{ $service->test() }}</p>
-    <p>{{ microtime(true) - LARAVEL_START }}</p>
-</body>
-</html>
+<x-cars::debug from="index start" />
+
+@extends('cars::layouts.app')
+
+@section('main')
+    <x-cars::modules.page-title />
+
+    <section class="section">
+        <x-cars::debug from="vor controls" />
+        <x-cars::modules.controls />
+        <x-cars::debug from="nach controls" />
+
+        <x-cars::debug from="vor vehicles" />
+        <x-cars::modules.vehicles limit="25" />
+        <x-cars::debug from="nach vehicles" />
+    </section>
+@endsection
+
+<x-cars::debug from="index end" />
